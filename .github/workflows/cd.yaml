@@ -53,6 +53,12 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
+      - name: Print Variable
+        run: |
+          echo "Value of Variable 1: ${{ secrets.FIREBASE_ANDROID_APP_ID }}"
+          echo "Value of Variable 2: ${{ secrets.FIREBASE_IOS_APP_ID }}"
+          echo "Value of Variable 2: ${{ secrets.FIREBASE_TOKEN }}"
+
       - name: Deploy Android to Firebase App Distribution
         run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app ${{ secrets.FIREBASE_ANDROID_APP_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
 
