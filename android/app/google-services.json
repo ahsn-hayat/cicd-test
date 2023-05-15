@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "934810908369",
+    "firebase_url": "https://admob-example-8e376.firebaseio.com",
+    "project_id": "admob-example-8e376",
+    "storage_bucket": "admob-example-8e376.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934810908369:android:513e0d5d733a38b93437f0",
+        "android_client_info": {
+          "package_name": "com.mytech.admobexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934810908369-qanmcvo0bct5sdsa60pmjtit5jrrbb2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN1rMnCTwBZNXldwN3rW0hRIHan_Gl4L8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934810908369-qanmcvo0bct5sdsa60pmjtit5jrrbb2e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "934810908369-14rq6n70v70ph57fegr8e3itkntd8ij1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mytech.admobexample"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934810908369:android:97742a569985daf73437f0",
+        "android_client_info": {
+          "package_name": "com.testing.cicd.cicd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934810908369-qanmcvo0bct5sdsa60pmjtit5jrrbb2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN1rMnCTwBZNXldwN3rW0hRIHan_Gl4L8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934810908369-qanmcvo0bct5sdsa60pmjtit5jrrbb2e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "934810908369-14rq6n70v70ph57fegr8e3itkntd8ij1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mytech.admobexample"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
