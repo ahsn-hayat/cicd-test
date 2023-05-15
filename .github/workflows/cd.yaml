@@ -13,13 +13,38 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ runner.workspace }}/ios/Pods
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ runner.os }}-flutter-
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
 
-      - name: Install dependencies
-        run: flutter pub get
+      - name: Cache pub packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.PUB_CACHE }}
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ runner.os }}-pub-
+
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: ${{ runner.os }}-gradle-
+
+      - name: Cache Java setup
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.JAVA_HOME }}
+          key: ${{ runner.os }}-java-${{ hashFiles('**/*.java') }}
+          restore-keys: ${{ runner.os }}-java-
 
       - name: Set up Java
         uses: actions/setup-java@v1
@@ -39,4 +64,4 @@ jobs:
         run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app ${{ secrets.FIREBASE_ANDROID_APP_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
 
       - name: Deploy iOS to Firebase App Distribution
-        run: firebase appdistribution:distribute "build/ios/archive/Runner.xcarchive/Products/Applications/Runner.app" --app ${{ secrets.FIREBASE_IOS_APP_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase appdistribution:distribute
