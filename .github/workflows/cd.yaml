@@ -21,6 +21,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+
       - name: Build Android APK
         run: flutter build apk --release
 
