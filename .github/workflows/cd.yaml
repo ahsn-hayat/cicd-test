@@ -60,7 +60,13 @@ jobs:
           echo "Value of Variable 2: ${{ secrets.FIREBASE_TOKEN }}"
 
       - name: Deploy Android to Firebase App Distribution
-        run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app ${{ secrets.FIREBASE_ANDROID_APP_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
+        run: bundle exec fastlane deploy_android firebase_android_app_id=${{ secrets.FIREBASE_ANDROID_APP_ID }} firebase_token=${{ secrets.FIREBASE_TOKEN }}
+
+#      - name: Deploy iOS to Firebase App Distribution
+#        run: bundle exec fastlane deploy_ios firebase_ios_app_id=${{ secrets.FIREBASE_IOS_APP_ID }} firebase_token=${{ secrets.FIREBASE_TOKEN }}
+
+#      - name: Deploy Android to Firebase App Distribution
+#        run: firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app ${{ secrets.FIREBASE_ANDROID_APP_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
 
 #      - name: Deploy iOS to Firebase App Distribution
 #        run: firebase appdistribution:distribute build/ios/archive/Runner.xcarchive.zip --app ${{ secrets.FIREBASE_IOS_APP_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
