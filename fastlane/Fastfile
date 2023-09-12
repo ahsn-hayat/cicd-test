@@ -25,9 +25,12 @@ end
 platform :android do
   desc "Deploy Android to Firebase App Distribution"
   lane :deploy_android do |options|
+    gradle_path = "android/gradlew"  # Update this line with the correct path
+
     gradle(
       task: "assemble",
-      build_type: "Release"
+      build_type: "Release",
+      gradle_path: gradle_path
     )
     firebase_app_distribution(
       app: ENV["FIREBASE_ANDROID_APP_ID"] || options[:firebase_android_app_id],
